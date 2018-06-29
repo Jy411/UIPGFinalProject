@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BMW - 7 Series</title>
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css"/>
+    <script src="functions.js"></script>
+
+    <script type="text/javascript">
+        var totalCost, baseCost;
+        var engineCost;
+        var exteriorCost;
+        var interiorCost;
+        var extra;
+        var extra2;
+        var extra3;
+
+        totalCost = 0;
+        baseCost = 60000;
+        engineCost = 0;
+        exteriorCost = 0;
+        interiorCost = 0;
+        extra = 0;
+        extra2 = 0;
+        extra3 = 0;
+
+        totalCost = baseCost + exteriorCost + engineCost + extra + interiorCost;
+
+        function calculateEngineCost(engineType) {
+            if (engineType == 'Petrol') {
+                totalCost = baseCost + exteriorCost - engineCost + extra + interiorCost + extra2 + extra3;
+                engineCost = 3000;
+                totalCost = baseCost + exteriorCost + engineCost + extra + interiorCost + extra2 + extra3;
+                document.getElementById("totalCost").innerHTML = totalCost;
+
+            }
+            else if (engineType == 'Diesel') {
+
+                totalCost = baseCost + exteriorCost + engineCost + extra + interiorCost + extra2 + extra3;
+                engineCost = 4000;
+                totalCost = baseCost + exteriorCost + engineCost + extra + interiorCost + extra2 + extra3;
+                document.getElementById("totalCost").innerHTML = totalCost;
+            }
+            else if (engineType == 'Other') {
+                totalCost = baseCost + exteriorCost - engineCost + extra + interiorCost + extra2 + extra3;
+                engineCost = 5000;
+                totalCost = baseCost + exteriorCost + engineCost + extra + interiorCost + extra2 + extra3;
+                document.getElementById("totalCost").innerHTML = totalCost;
+            }
+
+        }
+
+
+        function calculateExteriorCost(exteriorType) {
+            if (exteriorType == 'Non-Metallic') {
+                totalCost = baseCost - exteriorCost + engineCost + extra + interiorCost + extra2 + extra3;
+                exteriorCost = 0;
+                totalCost = baseCost + exteriorCost + engineCost + extra + interiorCost + extra2 + extra3;
+
+                document.getElementById("totalCost").innerHTML = totalCost;
+
+            }
+            else if (exteriorType == 'Metallic') {
+                totalCost = baseCost - exteriorCost + engineCost + extra + interiorCost + extra2 + extra3;
+                exteriorCost = 5000;
+                totalCost = baseCost + exteriorCost + engineCost + extra + interiorCost + extra2 + extra3;
+
+                document.getElementById("totalCost").innerHTML = totalCost;
+
+            }
+            else if (exteriorType == 'Carbon') {
+                totalCost = baseCost - exteriorCost + engineCost + extra + interiorCost + extra2 + extra3;
+                exteriorCost = 20000;
+                totalCost = baseCost + exteriorCost + engineCost + extra + interiorCost + extra2 + extra3;
+                document.getElementById("totalCost").innerHTML = totalCost;
+
+            }
+
+
+        }
+
+
+        function calculateInteriorCost(interiorType) {
+            if (interiorType == 'Upholstery') {
+                totalCost = baseCost + exteriorCost + engineCost + extra - interiorCost + extra2 + extra3;
+                interiorCost = 5000;
+                totalCost = baseCost + exteriorCost + engineCost + extra + interiorCost + extra2 + extra3;
+
+                document.getElementById("totalCost").innerHTML = totalCost;
+
+            }
+            else if (interiorType == 'Trim') {
+                totalCost = baseCost + exteriorCost + engineCost + extra - interiorCost + extra2 + extra3;
+                interiorCost = 1000;
+                totalCost = baseCost + exteriorCost + engineCost + extra + interiorCost + extra2 + extra3;
+
+                document.getElementById("totalCost").innerHTML = totalCost;
+
+            }
+
+        }
+
+        function ifChecked() {
+            var checkBox = document.getElementById('checkbox-1');
+
+            if (checkBox.checked == true) {
+                extra = 500;
+                totalCost = baseCost + exteriorCost + engineCost + extra + interiorCost + extra2 + extra3;
+                document.getElementById("totalCost").innerHTML = totalCost;
+            }
+            else if (checkBox.checked == false) {
+                extra = 0;
+                totalCost = baseCost + exteriorCost + engineCost + extra + interiorCost + extra2 + extra3;
+                document.getElementById("totalCost").innerHTML = totalCost;
+            }
+            else {
+                document.getElementById("totalCost").innerHTML = totalCost;
+            }
+        }
+
+        function ifChecked2() {
+            var checkBox = document.getElementById('checkbox-2');
+
+            if (checkBox.checked == true) {
+                extra2 = 500;
+                totalCost = baseCost + exteriorCost + engineCost + extra + interiorCost + extra2 + extra3;
+                document.getElementById("totalCost").innerHTML = totalCost;
+            }
+            else if (checkBox.checked == false) {
+                extra2 = 0;
+                totalCost = baseCost + exteriorCost + engineCost + extra + interiorCost + extra2 + extra3;
+                document.getElementById("totalCost").innerHTML = totalCost;
+            }
+            else {
+                document.getElementById("totalCost").innerHTML = totalCost;
+            }
+        }
+
+        function ifChecked3() {
+            var checkBox = document.getElementById('checkbox-3');
+
+            if (checkBox.checked == true) {
+                extra3 = 500;
+                totalCost = baseCost + exteriorCost + engineCost + extra + interiorCost + extra2 + extra3;
+                document.getElementById("totalCost").innerHTML = totalCost;
+            }
+            else if (checkBox.checked == false) {
+                extra3 = 0;
+                totalCost = baseCost + exteriorCost + engineCost + extra + interiorCost + extra2 + extra3;
+                document.getElementById("totalCost").innerHTML = totalCost;
+            }
+            else {
+                document.getElementById("totalCost").innerHTML = totalCost;
+            }
+        }
+
+        function showAvailableItems(listChoice) {
+
+            if (listChoice == 'communication') {
+                document.getElementById("items").innerHTML
+
+            }
+
+        }
+
+
+    </script>
+
+
+</head>
+
+<body>
+<div class="demo-layout-transparent mdl-layout mdl-js-layout">
+    <header class="mdl-layout__header mdl-layout__header--transparent">
+        <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span class="mdl-layout-title"><img src="./images/BMWLOGOSMALL.png" style="width: 7%"></span>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <span class="mdl-layout-title">
+				<button class="button mdl-button mdl-js-button mdl-button--raised mdl-button--colored dialog-button">
+					<a id="headerLoginButton" href="#openModal">Log In</a>
+				</button>
+				<button id="headerSignUpButton" class="button mdl-button mdl-js-button mdl-button--raised mdl-button--colored dialog-button">
+					<a  href="#openModal2">Sign Up</a>
+				</button>
+			</span>
+            <!-- Navigation -->
+        </div>
+    </header>
+
+    <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title" style="background-color: black; color: white;font-size: 30px;">Navigation</span>
+        <nav class="mdl-navigation" style="background-color:white;">
+            <a class="mdl-navigation__link" href="main.html" style="color: black; font-size: 25px;">Home</a>
+            <a class="mdl-navigation__link" href="about.html" style="color: black; font-size: 25px;">About us</a>
+            <a class="mdl-navigation__link" href="contact.html" style="color: black; font-size: 25px;">Contact us</a>
+            <a class="mdl-navigation__link" href="faq.html" style="color: black; font-size: 25px;">FAQ</a>
+        </nav>
+    </div>
+
+    <div class="mdl-layout__content">
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--4-col"></div>
+            <div class="mdl-cell mdl-cell--4-col"><h1 style="position: center;">BMW 7 Series</h1></div>
+            <div class="mdl-cell mdl-cell--4-col"></div>
+        </div>
+
+        <div class="mdl-grid" style="background-color:black; ">
+
+            <div class="mdl-cell mdl-cell--12-col">
+
+                <img class="center" src="images/BMW7Series.jpg">
+
+            </div>
+
+            <div class="mdl-cell mdl-cell--4-col">
+
+                <img class="center" src="images/BMW7Interior.jpg" >
+
+            </div>
+
+            <div class="mdl-cell mdl-cell--4-col">
+
+                <h1 class="alternate">LIFE AT THE APEX</h1>
+                <p class="subtitle">
+                    Discover the ultimate evolution of performance, luxury, and technology. In this purebred performer, every moment is one to savor.
+                </p>
+                <h2 class="version2">THE LAST WORD IN LUXURY</h2>
+                <h2 class="version2">SURPASSING PERFORMANCE</h2>
+                <h2 class="version2">ENGAGE YOUR SENSES</h2>
+                <h2 class="version2">INTUITIVE AND INTELLIGENT</h2>
+                <h2 class="version2">DRIVE</h2>
+
+            </div>
+
+            <div class="mdl-cell mdl-cell--4-col">
+
+                <img class="center" src="images/BMW7Interior2.jp2" >
+
+
+            </div>
+
+
+
+        </div>
+
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--3-col"></div>
+            <div class="mdl-cell mdl-cell--6-col"><h1 style="position: center;">Customize your own BMW</h1></div>
+            <div class="mdl-cell mdl-cell--3-col"></div>
+        </div>
+
+        <div class="mdl-grid" style="background-color:black;">
+            <div class="mdl-cell mdl-cell--3-col"></div>
+            <div class="mdl-cell mdl-cell--6-col">
+
+                <div class="mdl-grid portfolio-max-width">
+
+                    <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+                        <div class="mdl-card__media">
+                            <img class="article-image" src=" images/BMW740.png" border="0" alt="">
+                        </div>
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">BMW 740i/750i</h2>
+                        </div>
+
+                        <div class="mdl-card__supporting-text">
+                            <p>
+                                Luxuriously appointed, innovatively advanced, and imbued with legendary performance.
+                                The 740i and 750i earned their prestigious place in the BMW lineup.
+                            </p>
+                        </div>
+                        <div class="mdl-card__actions mdl-card--border">
+                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent"
+                               href="portfolio-example01.html">Customize</a>
+                        </div>
+                    </div>
+
+                    <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+                        <div class="mdl-card__media">
+                            <img class="article-image" src=" images/BMWM760.png" border="0" alt="">
+                        </div>
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">BMW M760i</h2>
+                        </div>
+
+                        <div class="mdl-card__supporting-text">
+                            <p>
+                                Inside certain beauties, there&#8217;s a beast waiting to be unchained. The sleek
+                                M760i conceals a powerful V&ndash;12 engine. It&#8217;s not overpowered &ndash; it&#8217;s just right.
+                            </p>
+                        </div>
+                        <div class="mdl-card__actions mdl-card--border">
+                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent"
+                               href="portfolio-example01.html">Customize</a>
+                        </div>
+                    </div>
+
+                    <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+                        <div class="mdl-card__media">
+                            <img class="article-image" src=" images/BMW7Alpina.png" border="0" alt="">
+                        </div>
+                        <div class="mdl-card__title">
+                            <h2 class="mdl-card__title-text">BMW Alpina B7</h2>
+                        </div>
+
+                        <div class="mdl-card__supporting-text">
+                            <p>
+                                A partnership born of passion and tempered by perfection until every bespoke detail
+                                is just right. ALPINA craftsmanship turns the 7 Series into something exquisite.
+                            </p>
+                        </div>
+                        <div class="mdl-card__actions mdl-card--border">
+                            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent"
+                               href="portfolio-example01.html">Customize</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <table class="mdl-data-table mdl-js-data-table" style="width: 930px">
+
+                    <tr style="background-color: black; opacity: 0.9;">
+                        <th class="mdl-data-table__cell--non-numeric"><h3 style="color:white;">Engine</h3></th>
+                        <th class="mdl-data-table__cell--non-numeric"></th>
+                        <th></th>
+                        <th class="mdl-data-table__cell--non-numeric"><h3 style="color:white;">Price</h3></th>
+                    </tr>
+
+                    <tbody>
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">
+
+                            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
+                                <input onclick="calculateEngineCost('Petrol');" type="radio" id="option-1"
+                                       class="mdl-radio__button" name="engineType" value="1" checked>
+                                <span class="mdl-radio__label">Petrol</span>
+                            </label></td>
+
+                        <td class="mdl-data-table__cell--non-numeric"></td>
+                        <td></td>
+                        <td class="mdl-data-table__cell--non-numeric">3000</td>
+                    </tr>
+
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">
+                            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+                                <input onclick="calculateEngineCost('Diesel');" type="radio" id="option-2"
+                                       class="mdl-radio__button" name="engineType" value="2">
+                                <span class="mdl-radio__label">Diesel</span>
+                            </label>
+                        <td class="mdl-data-table__cell--non-numeric"></td>
+                        <td></td>
+                        <td class="mdl-data-table__cell--non-numeric">4000</td>
+                    </tr>
+
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">
+                            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">
+                                <input onclick="calculateEngineCost('Other');" type="radio" id="option-3"
+                                       class="mdl-radio__button" name="engineType" value="3">
+                                <span class="mdl-radio__label">Hybrid</span>
+                            </label>
+
+                        </td>
+                        <td class="mdl-data-table__cell--non-numeric"></td>
+                        <td></td>
+                        <td class="mdl-data-table__cell--non-numeric">5000</td>
+                    </tr>
+
+                    <tr style="background-color: black; opacity: 0.9;">
+                        <th class="mdl-data-table__cell--non-numeric"><h3 style="color:white;">Exterior</h3></th>
+                        <th class="mdl-data-table__cell--non-numeric"></th>
+                        <th></th>
+                        <th class="mdl-data-table__cell--non-numeric"><h3 style="color:white;">Price</h3></th>
+                    </tr>
+
+                    <tbody>
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">
+                            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-4">
+                                <input onclick="calculateExteriorCost('Non-Metallic');" type="radio" id="option-4"
+                                       class="mdl-radio__button" name="paintType" value="1">
+                                <span class="mdl-radio__label">Non-Metallic</span>
+                            </label>
+
+                        </td>
+
+                        <td class="mdl-data-table__cell--non-numeric"></td>
+                        <td></td>
+                        <td class="mdl-data-table__cell--non-numeric">0</td>
+                    </tr>
+
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">
+
+                            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-5">
+                                <input onclick="calculateExteriorCost('Metallic');" type="radio" id="option-5"
+                                       class="mdl-radio__button" name="paintType" value="2">
+                                <span class="mdl-radio__label">Metallic</span>
+                            </label>
+                        </td>
+                        <td class="mdl-data-table__cell--non-numeric"></td>
+                        <td></td>
+                        <td class="mdl-data-table__cell--non-numeric">5000</td>
+                    </tr>
+
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">
+                            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-6">
+                                <input onclick="calculateExteriorCost('Carbon');" type="radio" id="option-6"
+                                       class="mdl-radio__button" name="paintType" value="3">
+                                <span class="mdl-radio__label">Carbon</span>
+                            </label>
+                        </td>
+                        <td class="mdl-data-table__cell--non-numeric"></td>
+                        <td></td>
+                        <td class="mdl-data-table__cell--non-numeric">20000</td>
+                    </tr>
+
+                    <tr style="background-color: black; opacity: 0.9;">
+                        <th class="mdl-data-table__cell--non-numeric"><h3 style="color:white;">Interior</h3></th>
+                        <th class="mdl-data-table__cell--non-numeric"></th>
+                        <th></th>
+                        <th class="mdl-data-table__cell--non-numeric"><h3 style="color:white;">Price</h3></th>
+                    </tr>
+
+                    <tbody>
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">
+                            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="Upholstery">
+                                <input onclick="calculateInteriorCost('Upholstery');" type="radio" id="Upholstery"
+                                       class="mdl-radio__button" name="Interior" value="1">
+                                <span class="mdl-radio__label">Upholstery</span>
+                            </label>
+                        </td>
+
+                        <td class="mdl-data-table__cell--non-numeric"></td>
+                        <td></td>
+                        <td class="mdl-data-table__cell--non-numeric">5000</td>
+                    </tr>
+
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">
+                            <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="Trim">
+                                <input onclick="calculateInteriorCost('Trim');" type="radio" id="Trim" class="mdl-radio__button"
+                                       name="Interior" value="2">
+                                <span class="mdl-radio__label">Trim</span>
+                            </label>
+                        </td>
+                        <td class="mdl-data-table__cell--non-numeric"></td>
+                        <td></td>
+                        <td class="mdl-data-table__cell--non-numeric">1000</td>
+                    </tr>
+
+
+                    <tr style="background-color: black; opacity: 0.9;">
+                        <th class="mdl-data-table__cell--non-numeric"><h3 style="color:white;">Extra features</h3></th>
+                        <th class="mdl-data-table__cell--non-numeric"></th>
+                        <th></th>
+                        <th class="mdl-data-table__cell--non-numeric"><h3 style="color:white;">Price</h3></th>
+                    </tr>
+
+                    <tbody>
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">
+
+                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
+                                <input onclick="ifChecked();" type="checkbox" id="checkbox-1" class="mdl-checkbox__input">
+                                <span class="mdl-checkbox__label">Harman Kardon Hi-Fi</span>
+                            </label>
+
+                        </td>
+
+                        <td class="mdl-data-table__cell--non-numeric"></td>
+                        <td></td>
+                        <td class="mdl-data-table__cell--non-numeric">500</td>
+                    </tr>
+
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">
+                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-2">
+                                <input onclick="ifChecked2();" type="checkbox" id="checkbox-2" class="mdl-checkbox__input">
+                                <span class="mdl-checkbox__label">Concierge Service</span>
+                            </label>
+                        <td class="mdl-data-table__cell--non-numeric"></td>
+                        <td></td>
+                        <td class="mdl-data-table__cell--non-numeric">500</td>
+                    </tr>
+
+                    <tr>
+                        <td class="mdl-data-table__cell--non-numeric">
+                            <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-3">
+                                <input onclick="ifChecked3();" type="checkbox" id="checkbox-3" class="mdl-checkbox__input">
+                                <span class="mdl-checkbox__label">Enhanced Bluetooth with Wireless Charging</span>
+                            </label>
+                        </td>
+                        <td class="mdl-data-table__cell--non-numeric"></td>
+                        <td></td>
+                        <td class="mdl-data-table__cell--non-numeric">500</td>
+                    </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="mdl-cell mdl-cell--2-col"></div>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+
+<div class="my">
+
+    <div>
+        <h1 style="color:black">Price:</h1>
+        <h1 id="totalCost" style="color:black"></h1>
+    </div>
+
+</div>
+
+<footer class="mdl-mini-footer">
+    <div class="mdl-mini-footer__left-section">
+        <div class="mdl-logo">BMW & Mates Sdn Bhd</div>
+    </div>
+    <div class="mdl-mini-footer__right-section">
+        <ul class="mdl-mini-footer__link-list">
+            <li><a href="https://www.facebook.com/BMW.Malaysia/" class="fa fa-facebook"></a></li>
+            <li><a href="https://twitter.com/BMW" class="fa fa-twitter"></a></li>
+            <li><a href="https://www.youtube.com/user/bmwMYS" class="fa fa-youtube"></a></li>
+        </ul>
+    </div>
+</footer>
+</div>
+
+<div id="openModal" class="modalDialog">
+    <div>
+        <a href="#close" title="Close" class="close">X</a>
+        <h2>Sign In</h2>
+        <form action="#">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="loginEmail">
+                <label class="mdl-textfield__label" for="loginEmail">Email</label>
+            </div>
+        </form>
+        <form action="#">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="password" id="loginPassword">
+                <label class="mdl-textfield__label" for="loginPassword">Password</label>
+            </div>
+        </form>
+        <button id="loginButton" onclick="login(document.getElementById('loginEmail').value, document.getElementById('loginPassword').value)" class="mdl-button mdl-js-button mdl-button--raised">
+            Login
+        </button>
+    </div>
+</div>
+
+<div id="openModal2" class="modalDialog">
+    <div>
+        <a href="#close" title="Close" class="close">X</a>
+        <h2>Sign Up</h2>
+        <form action="#">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" id="registerEmail">
+                <label class="mdl-textfield__label" for="registerEmail">Email</label>
+            </div>
+        </form>
+        <form action="#">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="password" id="registerPassword">
+                <label class="mdl-textfield__label" for="registerPassword">Password</label>
+            </div>
+        </form>
+        <button class="mdl-button mdl-js-button mdl-button--raised">
+            Register
+        </button>
+    </div>
+</div>
+
+</body>
+</html>
